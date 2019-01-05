@@ -1,0 +1,23 @@
+{
+  "name": "18a58t9c-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanielgrossman/18a58t9c-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanielgrossman/18a58t9c-frontend/issues"
+  },
+  "homepage": "https://github.com/nathanielgrossman/18a58t9c-frontend#readme",
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
