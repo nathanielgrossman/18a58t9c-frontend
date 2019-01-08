@@ -17,8 +17,8 @@ function AppState (props) {
         setLoading(false);
     }
 
-    stateContext.select = (id) => {
-        setSelected(id)
+    stateContext.select = (index) => {
+        setSelected(index)
     }
 
     return (
