@@ -38,6 +38,11 @@
     padding: 10px;
 }
 
+#title {
+    vertical-align: top;
+    padding: 0px 20px 0px 20px;
+}
+
 .picture {
     max-height: 100%;
     max-width: 100%;
@@ -65,11 +70,16 @@
         height: 100%;
         width: 80vw;
         max-width: 530px;
-        padding-top: calc(50vh - 100px);
+        padding-top: 25vh;
         margin-bottom: 200px;
         padding-left: 0;
         padding-right: 0;
         white-space: normal;
+    }
+
+    #title {
+        vertical-align: top;
+        padding: 20px 0px 20px 0px;
     }
 
     .thumbnail {

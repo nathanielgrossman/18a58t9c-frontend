@@ -21,6 +21,7 @@ function Timeline() {
   return (
     <div id="timeline-wrapper">
       <div id="timeline">
+          <span id="title">18a58t9c</span>
           {thumbnails}
       </div>
     </div>
