@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AppContext from "./AppContext.js";
 
-function AppState (props) {
+function AppState(props) {
     const [loading, setLoading] = useState(true);
     const [images, setImages] = useState([]);
     const [selected, setSelected] = useState(null);
@@ -17,8 +17,10 @@ function AppState (props) {
         setLoading(false);
     }
 
-    stateContext.select = (index) => {
-        setSelected(index)
+    stateContext.select = (index, id) => {
+        setSelected(index);
+        axios.post('https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/update-views-18a58t9c', { id: id })
+            .then(response => console.log("updated", id))
     }
 
     stateContext.deselect = () => {

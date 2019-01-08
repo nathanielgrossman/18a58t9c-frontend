@@ -9,7 +9,7 @@ function Thumbnail({ id, index, title, color }) {
     <img 
       alt={title} 
       src={`https://s3-us-west-1.amazonaws.com/18a58t9c/thumbs/${id}.jpg`}
-      onClick={() => select(index)}
+      onClick={() => select(index, id)}
     />
   )
 }
