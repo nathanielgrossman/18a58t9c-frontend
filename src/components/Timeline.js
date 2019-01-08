@@ -19,8 +19,10 @@ function Timeline() {
   })
 
   return (
-    <div id="timeline">
-        {thumbnails}
+    <div id="timeline-wrapper">
+      <div id="timeline">
+          {thumbnails}
+      </div>
     </div>
   )
 }

@@ -11,17 +11,29 @@
     justify-content: center;
 }
 
+#timeline-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    z-index: 0;
+}
+
 #timeline {
     height: 400px;
     padding-left: calc(50vw - 133px);
-    overflow-x: scroll;
-    overflow-y: hidden;
     white-space: nowrap;
 }
 
 #image-view {
   height: 100vh;
   width: 100vw;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
 }
 
 .picture {
@@ -31,7 +43,7 @@
 
 .thumbnail {
     max-height: 100%;
-    margin: 0 5 0 5;
+    margin: 0px 5px 0px 5px;
 }
 
 .loader:empty {
@@ -56,7 +68,4 @@
     }
 }
 
-::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
+

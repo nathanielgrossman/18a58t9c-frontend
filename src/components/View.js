@@ -13,7 +13,8 @@ function View() {
 
     return (
       <div id="view">
-        {selected !== null ? <Image /> : <Timeline />}
+        { selected !== null ? <Image /> : null }
+        <Timeline />
       </div>
     );
 
