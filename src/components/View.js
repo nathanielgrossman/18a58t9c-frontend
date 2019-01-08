@@ -1,20 +1,21 @@
-import React, {Component} from "react";
+import React, { useContext } from "react";
+import AppContext from "../AppContext.js";
 import Timeline from "./Timeline.js";
 
-class View extends Component{
+function View() {
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+    const { loading } = useContext(AppContext);
 
-  render(){
-    return(
-      <div id="view">
+    if (loading) {
+        return null;
+    }
+
+    return (
+        <div id="view">
         <Timeline />
       </div>
     );
-  }
+
 }
 
-export default View; 
+export default View;
