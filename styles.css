@@ -19,6 +19,7 @@
     overflow-y: hidden;
     white-space: nowrap;
     z-index: 0;
+    -webkit-overflow-scrolling: touch;
 }
 
 #timeline {
@@ -34,6 +35,7 @@
     left: 0px;
     top: 0px;
     z-index: 1;
+    padding: 10px;
 }
 
 .picture {
@@ -56,6 +58,7 @@
         overflow-y: scroll;
         overflow-x: hidden;
         z-index: 0;
+        -webkit-overflow-scrolling: touch;
     }
 
     #timeline {
