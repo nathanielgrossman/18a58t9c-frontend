@@ -5,7 +5,8 @@ const AppContext = React.createContext({
   images: [],
   selected: null,
   loadImages: () => {},
-  select: () => {}
+  select: () => {},
+  deselect: () => {}
 });
 
 

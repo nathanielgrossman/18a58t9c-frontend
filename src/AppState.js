@@ -21,6 +21,10 @@ function AppState (props) {
         setSelected(index)
     }
 
+    stateContext.deselect = () => {
+        setSelected(null)
+    }
+
     return (
         <AppContext.Provider value={stateContext}>
             {props.children}
