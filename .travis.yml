@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- node
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: s3
+  access_key_id: AKIAIRW4MQ4Z5VAO5C7A
+  secret_access_key:
+    secure: $SECRETACCESSKEY
+  bucket: www.18a58t9c.club
+  acl: public_read
+  region: us-west-1
+  local_dir: dist
+  skip_cleanup: true
+
