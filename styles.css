@@ -25,6 +25,7 @@
 #timeline {
     height: 400px;
     padding-left: calc(50vw - 250px);
+    padding-right: 50vw;
     white-space: nowrap;
 }
 
@@ -44,6 +45,23 @@
     display: inline-block;
     width: 250px;
     text-align: right;
+}
+
+.group-button {
+    height: 100%;
+    vertical-align: top;
+    padding: 20px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.group-button:hover {
+    border: 1px solid #ddd;
+    background: #ddd;
+    color: white;
 }
 
 .picture {
@@ -74,7 +92,6 @@
         width: 80vw;
         max-width: 400px;
         padding-top: 25vh;
-        margin-bottom: 200px;
         padding-left: 0;
         padding-right: 0;
         white-space: normal;
@@ -90,6 +107,19 @@
     .thumbnail {
         max-width: 100%;
         margin: 5px 0px 5px 0px;
+    }
+
+    .group-button {
+        width: 100%;
+        vertical-align: top;
+        padding: 20px;
+        margin-left: 0px;
+        margin-top: 5px;
+        display: inline-block;
+        text-align: center;
+        border: 1px solid black;
+        height: 50px;
+        margin-bottom: 50px;
     }
 
 }

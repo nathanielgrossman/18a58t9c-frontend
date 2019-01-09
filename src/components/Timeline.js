@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import AppContext from "../AppContext.js";
 import Thumbnail from "./Thumbnail.js";
+import GroupButton from "./GroupButton.js";
 
 function Timeline() {
 
-  const { images } = useContext(AppContext);
+  const { images, totalImages } = useContext(AppContext);
 
   const thumbnails = images.map((image, index) => {
     return (
@@ -23,6 +24,7 @@ function Timeline() {
       <div id="timeline">
           <span id="title">{images[0].created_at}</span>
           {thumbnails}
+          { images.length !== totalImages ? <GroupButton next={true} /> : null }
       </div>
     </div>
   )
