@@ -9,10 +9,8 @@ function App() {
 
     useEffect(() => {
         axios.get('https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/get-images-18a58t9c')
-            .then(response => JSON.parse(response.data.body))
-            .then(images => images.reverse())
-            .then(images => {
-                loadImages(images);
+            .then(response => {
+                loadImages(response.data.images);
             })
     }, {})
 
