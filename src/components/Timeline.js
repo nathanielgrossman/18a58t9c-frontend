@@ -21,7 +21,7 @@ function Timeline() {
   return (
     <div id="timeline-wrapper">
       <div id="timeline">
-          <span id="title">18a58t9c</span>
+          <span id="title">{images[0].created_at}</span>
           {thumbnails}
       </div>
     </div>
