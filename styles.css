@@ -119,7 +119,11 @@
         text-align: center;
         border: 1px solid black;
         height: 50px;
-        margin-bottom: 50px;
+    }
+
+    #spacer {
+      height: 1px;
+      margin-top: 25vh;
     }
 
 }

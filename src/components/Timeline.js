@@ -25,6 +25,7 @@ function Timeline() {
           <span id="title">{images[0].created_at}</span>
           {thumbnails}
           { images.length !== totalImages ? <GroupButton next={true} /> : null }
+          <div id="spacer"></div>
       </div>
     </div>
   )
