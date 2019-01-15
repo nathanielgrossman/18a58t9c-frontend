@@ -17,9 +17,9 @@ function Image() {
       style={bgStyle} 
       onClick={() => deselect()}
     >
-      <picture>
-        <source className="picture" type="image/webp" srcSet={`https://s3-us-west-1.amazonaws.com/18a58t9c/webp/${_id}.webp`} />
-        <img className="picture" alt={`${original}`} src={`https://s3-us-west-1.amazonaws.com/18a58t9c/jpg/${_id}.jpg`} />
+      <picture className="disable">
+        <source className="picture disable" type="image/webp" srcSet={`https://s3-us-west-1.amazonaws.com/18a58t9c/webp/${_id}.webp`} />
+        <img className="picture disable" alt={`${original}`} src={`https://s3-us-west-1.amazonaws.com/18a58t9c/jpg/${_id}.jpg`} />
       </picture>
     </div>
   )

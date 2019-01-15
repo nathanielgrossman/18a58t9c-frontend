@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+.disable {
+  pointer-events: none!important;
+}
+
 #view {
     height: 100vh;
     display: flex;
