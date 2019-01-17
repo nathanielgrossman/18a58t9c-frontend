@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import AppContext from "./AppContext.js";
 
 function AppState(props) {
+    const size = 20
+
     const [loading, setLoading] = useState(true);
+    const [endpoint, setEndpoint] = useState('https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/get-assorted-18a58t9c');
+    const [chronological, setChronological] = useState(false);
     const [images, setImages] = useState([]);
     const [selected, setSelected] = useState(null);
     const [totalImages, setTotalImages] = useState(0);
-    const [groupSize, setGroupSize] = useState(20);
+    const [groupSize, setGroupSize] = useState(size);
     const [group, setGroup] = useState(1);
-
 
     const stateContext = {
         loading,
+        endpoint,
+        chronological,
         images,
         selected,
         totalImages,
@@ -41,6 +46,17 @@ function AppState(props) {
 
     stateContext.deselect = () => {
         setSelected(null)
+    }
+
+    stateContext.toggleEndpoint = () => {
+        setLoading(true)
+        if (chronological) {
+            setChronological(false);
+            setEndpoint('https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/get-assorted-18a58t9c')
+        } else {
+            setChronological(true);
+            setEndpoint(`https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/get-images-18a58t9c?start=${0}&size=${groupSize}`)
+        }
     }
 
     return (

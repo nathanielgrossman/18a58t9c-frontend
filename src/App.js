@@ -5,20 +5,18 @@ import View from "./components/View.js";
 
 function App() {
 
-    const { loadImages, groupSize } = useContext(AppContext);
+  const { loadImages, groupSize, endpoint } = useContext(AppContext);
 
-    useEffect(() => {
-        axios.get(`https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/get-images-18a58t9c?start=${0}&size=${groupSize}`)
-            .then(response => {
-                loadImages(response.data);
-            })
-    }, {})
+  useEffect(() => {
+    axios.get(endpoint)
+      .then(response => loadImages(response.data))
+  }, [endpoint])
 
-    return (
-        <div id="app" className="loader">
-          <View />
-        </div>
-    );
+  return (
+    <div id="app" className="loader">
+      <View />
+    </div>
+  );
 }
 
 

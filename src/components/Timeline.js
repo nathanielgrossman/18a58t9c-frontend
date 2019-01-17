@@ -5,7 +5,7 @@ import GroupButton from "./GroupButton.js";
 
 function Timeline() {
 
-  const { images, totalImages } = useContext(AppContext);
+  const { images, totalImages, toggleEndpoint, chronological } = useContext(AppContext);
 
   const thumbnails = images.map((image, index) => {
     return (
@@ -15,6 +15,7 @@ function Timeline() {
         index={index}
         title={image.original}
         color={image.color}
+        type={'thumbnail'}
       />
     )
   })
@@ -22,7 +23,7 @@ function Timeline() {
   return (
     <div id="timeline-wrapper">
       <div id="timeline">
-          <span id="title">{images[0].created_at}</span>
+          <span id="title" onClick={toggleEndpoint}>{chronological ? images[0].created_at : '18a58t9c'}</span>
           {thumbnails}
           { images.length !== totalImages ? <GroupButton next={true} /> : null }
           <div id="spacer"></div>

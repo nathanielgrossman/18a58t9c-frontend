@@ -2,6 +2,8 @@ import React from "react";
 
 const AppContext = React.createContext({
   loading: true,
+  endpoint: '',
+  chronological: false,
   images: [],
   selected: null,
   totalImages: 0,
@@ -10,7 +12,8 @@ const AppContext = React.createContext({
   loadImages: () => {},
   nextGroup: () => {},
   select: () => {},
-  deselect: () => {}
+  deselect: () => {},
+  toggleEndpoint: () => {}
 });
 
 
