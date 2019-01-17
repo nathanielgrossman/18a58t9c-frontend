@@ -13,12 +13,11 @@ function Scatter() {
   const thumbnails = images.map((image, index) => {
     const style = {
       position: 'absolute',
-      top: random(0, window.innerHeight-300),
-      left: random(0, window.innerWidth-300),
+      top: random(20, window.innerHeight * .75),
+      left: random(0, window.innerWidth * .75),
       zIndex: random(0, totalImages),
       pointerEvents: 'none'
     }
-    style.marginLeft = '20 px'
 
     return (
       <div key={image._id} className="scatter-box" style={style}>
