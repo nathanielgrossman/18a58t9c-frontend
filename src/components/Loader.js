@@ -13,7 +13,7 @@ function Loader({ text }) {
       <ColorText
         key={`color-text-${index}`}
         text={char}
-        int={random(5, 12)}
+        int={random(8, 40)}
       />
     )
   })
