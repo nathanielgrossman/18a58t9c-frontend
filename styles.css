@@ -117,6 +117,7 @@
 
 .color-text {
   letter-spacing: 4px;
+  font-size: 1.5em;
 }
 
 @media screen and (max-width: 600px) {

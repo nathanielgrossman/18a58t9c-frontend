@@ -13,7 +13,7 @@ function View() {
     if (loading) {
         return (
         <div id="view">
-          <Loader text={chronological ? JSON.stringify(new Date()) : '18a58t9c'} /> 
+          <Loader text={chronological ? JSON.stringify(new Date()) : 'loading...'} /> 
         </div>
         )
     }

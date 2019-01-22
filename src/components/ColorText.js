@@ -20,11 +20,13 @@ function ColorText({ text, int }) {
 
     function step(timestamp) {
       let bool = Math.random() >= 0.5;
+      let boolB = Math.random() >= 0.5;
       if (counter > int && element.current) {
         counter = 0
         let bg = colors[random(0, colors.length - 1)]
         element.current.style.background = bg;
         element.current.style.color = invert(bg, bool)
+        element.current.style.textTransform = boolB ? 'uppercase' : 'lowercase';
 
       }
       counter++;
