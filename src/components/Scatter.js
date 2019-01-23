@@ -1,15 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import AppContext from "../AppContext.js";
 import Thumbnail from "./Thumbnail.js";
+import { random } from "../utils.js";
 
 function Scatter() {
 
   const { images, totalImages, toggleEndpoint, chronological } = useContext(AppContext);
-
-  function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
+  
   const thumbnails = images.map((image, index) => {
     const style = {
       position: 'absolute',

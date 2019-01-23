@@ -1,12 +1,9 @@
 import React from "react";
 import ColorText from "./ColorText.js"
+import { random } from "../utils.js";
 
 
 function Loader({ text }) {
-
-  function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
 
   const chars = text.split('').map((char, index) => {
     return (
