@@ -8,10 +8,12 @@ function Scatter() {
   const { images, totalImages, toggleEndpoint, chronological } = useContext(AppContext);
 
   const thumbnails = images.map((image, index) => {
+    let offset = window.innerWidth < 850 ? 101 : 301;
+
     const style = {
       position: 'absolute',
-      top: random(20, window.innerHeight * .75),
-      left: random(0, window.innerWidth * .75),
+      top: random(20, window.innerHeight - offset),
+      left: random(0, window.innerWidth - offset),
       zIndex: random(0, totalImages),
       pointerEvents: 'none'
     }

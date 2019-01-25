@@ -96,10 +96,10 @@
 .group-button {
   height: 100%;
   vertical-align: top;
-  padding: 20px;
+  padding: .5em;
   margin-left: 5px;
   display: inline-block;
-  width: 50px;
+  width: 2em;
   text-align: center;
   border: 1px solid black;
 }
@@ -141,7 +141,7 @@
   font-size: 2em;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-device-width: 850px) {
 
   #timeline-wrapper {
     display: flex;
@@ -173,19 +173,20 @@
 
   .thumbnail {
     max-width: 100%;
+    max-height: unset;
     margin: 5px 0px 5px 0px;
   }
 
   .group-button {
     width: 100%;
     vertical-align: top;
-    padding: 20px;
+    padding: .5em;
     margin-left: 0px;
     margin-top: 5px;
     display: inline-block;
     text-align: center;
     border: 1px solid black;
-    height: 50px;
+    height: 2em;
   }
 
   .scatter-box {
@@ -195,7 +196,7 @@
 
   #spacer {
     height: 1px;
-    margin-top: 25vh;
+    margin-top: 10vh;
   }
 
 }
