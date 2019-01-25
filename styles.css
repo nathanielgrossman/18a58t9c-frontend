@@ -64,16 +64,33 @@
   position: absolute;
   left: 0px;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
   padding: 10px;
 }
 
-#title {
+#date {
   vertical-align: top;
   padding: 0px 20px 0px 0px;
   display: inline-block;
   width: 250px;
   text-align: right;
+}
+
+#top-bar {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  padding: 0em .5em 0em .5em;
+  z-index: 1;
+}
+
+#title {
+  flex: 1;
+  font-size: 1em;
+  vertical-align: text-bottom;
+  margin-top: 1em;
 }
 
 .group-button {
@@ -120,6 +137,10 @@
   font-size: 1.2em;
 }
 
+.icon {
+  font-size: 2em;
+}
+
 @media screen and (max-width: 600px) {
 
   #timeline-wrapper {
@@ -143,7 +164,7 @@
     white-space: normal;
   }
 
-  #title {
+  #date {
     vertical-align: top;
     padding: 20px 0px 20px 0px;
     width: 100%;

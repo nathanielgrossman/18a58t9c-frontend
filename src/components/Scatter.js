@@ -6,7 +6,7 @@ import { random } from "../utils.js";
 function Scatter() {
 
   const { images, totalImages, toggleEndpoint, chronological } = useContext(AppContext);
-  
+
   const thumbnails = images.map((image, index) => {
     const style = {
       position: 'absolute',
@@ -32,7 +32,6 @@ function Scatter() {
 
   return (
     <div id="scatter">
-      <span onClick={toggleEndpoint}>{chronological ? images[0].created_at : '18a58t9c'}</span>
       {thumbnails}
     </div>
   )

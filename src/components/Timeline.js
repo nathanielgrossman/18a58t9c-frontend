@@ -23,7 +23,7 @@ function Timeline() {
   return (
     <div id="timeline-wrapper">
       <div id="timeline">
-          <span id="title" onClick={toggleEndpoint}>{chronological ? images[0].created_at : '18a58t9c'}</span>
+          <span id="date" onClick={toggleEndpoint}>{images[0].created_at}</span>
           {thumbnails}
           { images.length !== totalImages ? <GroupButton next={true} /> : null }
           <div id="spacer"></div>
