@@ -7,9 +7,9 @@ function GroupButton() {
 
 
   return (
-    <div className="group-button" onClick={() => nextGroup()} >
+    <button className="group-button" onClick={nextGroup} >
       <span>></span>
-    </div>
+    </button>
   )
 }
 

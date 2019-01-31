@@ -18,6 +18,9 @@
   background-color: transparent;
 }
 
+button {
+  all: unset;
+}
 
 .disable {
   pointer-events: none !important;
@@ -58,6 +61,11 @@
   white-space: nowrap;
 }
 
+.image-view-button {
+height: 100%;
+width:100%;
+}
+
 #image-view {
   height: 100vh;
   width: 100vw;
@@ -96,7 +104,6 @@
 .group-button {
   height: 100%;
   vertical-align: top;
-  padding: .5em;
   margin-left: 5px;
   display: inline-block;
   width: 2em;
@@ -115,6 +122,10 @@
   max-width: 100%;
 }
 
+.thumbnail-button {
+  height: 400px;
+}
+
 .thumbnail {
   max-height: 100%;
   margin: 0px 5px 0px 5px;
@@ -123,6 +134,11 @@
 .scatter-box {
   height: 300px;
   width: 300px;
+}
+
+.scatter-thumb-button {
+  height: 100%;
+  width: 100%;
 }
 
 .scatter-thumb {
@@ -139,6 +155,10 @@
 
 .icon {
   font-size: 2em;
+}
+
+.icon:hover {
+  color: #ddd;
 }
 
 @media screen and (max-device-width: 850px) {
@@ -171,6 +191,12 @@
     text-align: left;
   }
 
+  .thumbnail-button {
+    height: unset;
+    width: 80vw;
+    max-width: 400px;
+  }
+
   .thumbnail {
     max-width: 100%;
     max-height: unset;
@@ -179,13 +205,8 @@
 
   .group-button {
     width: 100%;
-    vertical-align: top;
-    padding: .5em;
     margin-left: 0px;
     margin-top: 5px;
-    display: inline-block;
-    text-align: center;
-    border: 1px solid black;
     height: 2em;
   }
 

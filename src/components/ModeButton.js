@@ -4,8 +4,14 @@ import AppContext from "../AppContext.js";
 function ModeButton() {
   const { chronological, toggleEndpoint } = useContext(AppContext);
 
+  const title = chronological ? 'Algorithmic View' : 'chronological View';
+  const toggle = (e) => {
+    e.preventDefault();
+    toggleEndpoint();
+  }
+
   return (
-    <p className="icon" onClick={toggleEndpoint}>{chronological ? <span>&#9860;</span> : <span>&#9716;</span>}</p>
+    <button  type="button" title={title} alt={title} onClick={toggle}>{chronological ? <span className="icon">&#9860;</span> : <span className="icon">&#9716;</span>}</button>
   )
 }
 

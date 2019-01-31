@@ -8,7 +8,7 @@ function Scatter() {
   const { images, totalImages, toggleEndpoint, chronological } = useContext(AppContext);
 
   const thumbnails = images.map((image, index) => {
-    let offset = window.innerWidth < 850 ? 101 : 301;
+    let offset = window.innerWidth < 850 ? 110 : 330;
 
     const style = {
       position: 'absolute',
@@ -24,7 +24,7 @@ function Scatter() {
         key={`thumb${index}`}
         id={image._id}
         index={index}
-        title={image.original}
+        title={image.original.substring(0,image.original.length-4)}
         color={image.color}
         type={'scatter-thumb'}
       />

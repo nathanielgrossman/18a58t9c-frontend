@@ -5,13 +5,16 @@ function Thumbnail({ id, index, title, color, type }) {
 
   const { select } = useContext(AppContext);
 
+  const buttonClass = `${type}-button`
+
   return (
-    <img 
-      className={type}
-      alt={title} 
-      src={`https://s3-us-west-1.amazonaws.com/18a58t9c/thumbs/${id}.jpg`}
-      onClick={() => select(index, id)}
-    />
+    <button className={buttonClass} onClick={() => select(index, id)}>
+      <img 
+        className={type}
+        alt={title} 
+        src={`https://s3-us-west-1.amazonaws.com/18a58t9c/thumbs/${id}.jpg`}
+      />
+    </button>
   )
 }
 
