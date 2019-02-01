@@ -12,7 +12,7 @@ function Scatter() {
 
     const style = {
       position: 'absolute',
-      top: random(20, window.innerHeight - offset),
+      top: random(50, window.innerHeight - offset),
       left: random(0, window.innerWidth - offset),
       zIndex: random(0, totalImages),
       pointerEvents: 'none'
