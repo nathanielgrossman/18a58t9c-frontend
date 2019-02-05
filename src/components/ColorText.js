@@ -12,9 +12,8 @@ function ColorText({ text, int }) {
       if (counter > int && element.current) {
         counter = 0
         let bg = colors[random(0, colors.length - 1)]
-        element.current.style.background = bg;
         element.current.style.color = invert(bg, coinToss())
-        element.current.style.textTransform = coinToss() ? 'uppercase' : 'lowercase';
+        element.current.style.textShadow = `${random(-5,2)}px ${random(-2,5)}px ${random(0,7)}px ${bg}`
 
       }
       counter++;
