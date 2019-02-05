@@ -145,7 +145,7 @@ button {
 
 .color-text {
   letter-spacing: 4px;
-  font-size: 2em;
+  font-size: 1.25em;
   transition: text-shadow .5s, color .25s;
   -webkit-transition: text-shadow .5s, color .25s;
 }
