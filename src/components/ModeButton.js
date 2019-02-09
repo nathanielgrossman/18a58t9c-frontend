@@ -11,7 +11,7 @@ function ModeButton() {
   }
 
   return (
-    <button  type="button" title={title} alt={title} onClick={toggle}>{chronological ? <span className="icon">&#9860;</span> : <span className="icon">&#9716;</span>}</button>
+    <button className="left" type="button" title={title} alt={title} onClick={toggle}>{chronological ? <span className="icon">&#9860;</span> : <span className="icon">&#9716;</span>}</button>
   )
 }
 

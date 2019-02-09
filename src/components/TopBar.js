@@ -7,8 +7,8 @@ function TopBar() {
 
   return (
     <div id="top-bar">
-      <p id="title">{chronological ? 'archive' : '18a58t9c'}</p>
       <ModeButton />
+      <p id="title">{chronological ? 'archive' : '18a58t9c'}</p>
     </div> 
   )
 }

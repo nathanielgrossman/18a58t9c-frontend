@@ -26,6 +26,10 @@ button {
   pointer-events: none !important;
 }
 
+.left {
+  flex: 1;
+}
+
 #view {
   height: 100vh;
   display: flex;
@@ -90,7 +94,6 @@ button {
 }
 
 #title {
-  flex: 1;
   font-size: 1em;
   vertical-align: text-bottom;
   margin-top: 1em;
