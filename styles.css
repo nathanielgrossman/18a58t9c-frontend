@@ -20,6 +20,12 @@
 
 button {
   all: unset;
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none
 }
 
 .disable {
@@ -159,6 +165,10 @@ button {
 
 .icon:hover {
   color: #ddd;
+}
+
+.icon:active {
+  color: #aaa;
 }
 
 @media screen and (max-device-width: 850px) {
