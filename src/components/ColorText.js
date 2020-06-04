@@ -25,7 +25,7 @@ function ColorText({ text, int }) {
     return function cleanup() {
       window.cancelAnimationFrame(animation)
     }
-  }, {})
+  }, [])
 
   return (
     <span ref={element} className="color-text">
