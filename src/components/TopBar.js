@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import AppContext from "../AppContext.js";
-import ModeButton from "./ModeButton.js";
+import AppContext from "../AppContext";
+import ModeButton from "./ModeButton";
 
 function TopBar() {
   const { chronological } = useContext(AppContext);

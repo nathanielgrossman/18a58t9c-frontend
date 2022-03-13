@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import AppContext from "../AppContext.js";
+import AppContext from "../AppContext";
 
 function ModeButton() {
   const { chronological, toggleEndpoint } = useContext(AppContext);

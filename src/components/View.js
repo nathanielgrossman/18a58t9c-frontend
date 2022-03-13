@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import AppContext from "../AppContext.js";
-import Timeline from "./Timeline.js";
-import Image from "./Image.js";
-import Scatter from "./Scatter.js";
-import Loader from "./Loader.js";
-import TopBar from "./TopBar.js";
+import AppContext from "../AppContext";
+import Timeline from "./Timeline";
+import Image from "./Image";
+import Scatter from "./Scatter";
+import Loader from "./Loader";
+import TopBar from "./TopBar";
 
 
 function View() {

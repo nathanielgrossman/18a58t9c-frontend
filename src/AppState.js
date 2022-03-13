@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AppContext from "./AppContext.js";
+import AppContext from "./AppContext";
 
 function AppState(props) {
     const size = 20

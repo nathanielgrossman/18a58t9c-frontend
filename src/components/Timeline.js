@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import AppContext from "../AppContext.js";
-import Thumbnail from "./Thumbnail.js";
-import GroupButton from "./GroupButton.js";
+import AppContext from "../AppContext";
+import Thumbnail from "./Thumbnail";
+import GroupButton from "./GroupButton";
 
 function Timeline() {
 

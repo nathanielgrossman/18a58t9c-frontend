@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
-import AppContext from "../AppContext.js";
-import Thumbnail from "./Thumbnail.js";
-import { random } from "../utils.js";
+import AppContext from "../AppContext";
+import Thumbnail from "./Thumbnail";
+import { random } from "../utils";
 
 function Scatter() {
 

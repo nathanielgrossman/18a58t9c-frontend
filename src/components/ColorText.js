@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { random, invert, coinToss } from "../utils.js";
-import colors from "../colors.js";
+import { random, invert, coinToss } from "../utils";
+import colors from "../colors";
 
 function ColorText({ text, int }) {
   let element = React.createRef();
@@ -8,7 +8,7 @@ function ColorText({ text, int }) {
   useEffect(() => {
     let counter = 0;
 
-    function step(timestamp) {
+    function step() {
       if (counter > int && element.current) {
         counter = 0
         let bg = colors[random(0, colors.length - 1)]

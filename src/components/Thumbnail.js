@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import AppContext from "../AppContext.js";
+import AppContext from "../AppContext";
 
 function Thumbnail({ id, index, title, color, type }) {
 

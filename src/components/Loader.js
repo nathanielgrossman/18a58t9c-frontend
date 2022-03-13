@@ -1,6 +1,6 @@
 import React from "react";
-import ColorText from "./ColorText.js"
-import { random } from "../utils.js";
+import ColorText from "./ColorText"
+import { random } from "../utils";
 
 
 function Loader({ text }) {

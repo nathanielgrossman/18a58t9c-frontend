@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
-import AppContext from "./AppContext.js";
-import View from "./components/View.js";
+import AppContext from "./AppContext";
+import View from "./components/View";
 
 
 function App() {
