@@ -1,54 +1,46 @@
 import React, { useState } from "react";
-import AppContext from "./AppContext";
+import AppContext, { AppContextValues } from "./AppContext";
 
-function AppState(props) {
+type AppStateProps = {
+  children: React.ReactNode;
+};
+const AppState: React.FC<AppStateProps> = ({children}) => {
     const size = 20
 
     const [loading, setLoading] = useState(true);
     const [endpoint, setEndpoint] = useState('https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/get-assorted-18a58t9c');
     const [chronological, setChronological] = useState(false);
-    const [images, setImages] = useState([]);
-    const [selected, setSelected] = useState(null);
-    const [totalImages, setTotalImages] = useState(0);
-    const [groupSize, setGroupSize] = useState(size);
+    const [images, setImages] = useState<Array<Image>>([]);
+    const [selected, setSelected] = useState<number | null>(null);
+    const [totalImages, setTotalImages] = useState<number>(0);
+    const [groupSize, setGroupSize] = useState<number>(size);
     const [group, setGroup] = useState(1);
 
-    const stateContext = {
-        loading,
-        endpoint,
-        chronological,
-        images,
-        selected,
-        totalImages,
-        groupSize,
-        group
-    }
-
-    stateContext.loadImages = (data) => {
+    const loadImages = (data: ImageQueryResult) => {
         setImages(data.images);
         setTotalImages(data.total);
         setLoading(false);
     }
 
-    stateContext.nextGroup = () => {
+    const nextGroup = () => {
         axios.get(`https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/get-images-18a58t9c?start=${groupSize * group}&size=${groupSize}`)
             .then(response => {
                 setGroup(group + 1);
-                setImages([].concat(images, response.data.images));
+                setImages({...images, ...response.data.images});
                 setTotalImages(response.data.total);
             })
     }
 
-    stateContext.select = (index, id) => {
+    const select = (index: number, id: string) => {
         setSelected(index);
         axios.post('https://kboykyzml8.execute-api.us-west-2.amazonaws.com/prod/update-views-18a58t9c', { id: id })
     }
 
-    stateContext.deselect = () => {
+    const deselect = () => {
         setSelected(null)
     }
 
-    stateContext.toggleEndpoint = () => {
+    const toggleEndpoint = () => {
         setLoading(true)
         if (chronological) {
             setChronological(false);
@@ -59,9 +51,25 @@ function AppState(props) {
         }
     }
 
+    const stateContext: AppContextValues = {
+      loading,
+      endpoint,
+      chronological,
+      images,
+      selected,
+      totalImages,
+      groupSize,
+      group,
+      loadImages,
+      nextGroup,
+      select,
+      deselect,
+      toggleEndpoint,
+    };
+
     return (
         <AppContext.Provider value={stateContext}>
-            {props.children}
+            {children}
         </AppContext.Provider>
     );
 }

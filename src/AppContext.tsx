@@ -4,16 +4,16 @@ export type AppContextValues = {
   loading: boolean;
   endpoint: string;
   chronological: boolean;
-  images: any[];
-  selected: null;
+  images: Array<Image>;
+  selected: number | null;
   totalImages: number;
   groupSize: number;
   group: number;
-  loadImages: () => any;
-  nextGroup: () => any;
-  select: () => any;
-  deselect: () => any;
-  toggleEndpoint: () => any;
+  loadImages: (data: any) => void;
+  nextGroup: () => void;
+  select: (index: number, id: string) => void;
+  deselect: () => void;
+  toggleEndpoint: () => void;
 };
 
 const AppContext = React.createContext<AppContextValues>({

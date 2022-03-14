@@ -3,7 +3,7 @@ import AppContext from "../AppContext";
 import Thumbnail from "./Thumbnail";
 import GroupButton from "./GroupButton";
 
-function Timeline() {
+const Timeline = () => {
 
   const { images, totalImages } = useContext(AppContext);
 
@@ -25,7 +25,7 @@ function Timeline() {
       <div id="timeline">
           <span id="date">{images[0].created_at}</span>
           {thumbnails}
-          { images.length !== totalImages ? <GroupButton next={true} /> : null }
+          { images.length !== totalImages ? <GroupButton /> : null }
           <div id="spacer"></div>
       </div>
     </div>

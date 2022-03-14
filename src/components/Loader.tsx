@@ -2,8 +2,11 @@ import React from "react";
 import ColorText from "./ColorText"
 import { random } from "../utils";
 
+type LoaderProps = {
+  text: string;
+}
 
-function Loader({ text }) {
+const Loader: React.FC<LoaderProps> = ({ text }) => {
 
   const chars = text.split('').map((char, index) => {
     return (

@@ -99,6 +99,6 @@ const colors = [
   'rgb(116, 98, 95)',
   'rgb(29, 22, 17)',
   'rgb(56, 48, 41)'
-]
+] as const;
 
 export default colors

@@ -5,7 +5,7 @@ import View from "./components/View";
 
 function App() {
 
-  const { loadImages, groupSize, endpoint } = useContext(AppContext);
+  const { loadImages, endpoint } = useContext(AppContext);
 
   useEffect(() => {
     axios.get(endpoint)

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App.tsx";
-import AppState from "./AppState.js"
+import App from "./App";
+import AppState from "./AppState"
 
 ReactDOM.render(
   <AppState>

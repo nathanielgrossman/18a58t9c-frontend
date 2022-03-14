@@ -1,7 +1,15 @@
 import React, { useContext } from "react";
 import AppContext from "../AppContext";
 
-function Thumbnail({ id, index, title, color, type }) {
+type ThumbnailProps = {
+  id: string;
+  index: number;
+  title: string;
+  color: string;
+  type: string;
+}
+
+const Thumbnail: React.FC<ThumbnailProps> = ({ id, index, title, color, type }) => {
 
   const { select } = useContext(AppContext);
 

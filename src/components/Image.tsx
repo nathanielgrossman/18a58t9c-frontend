@@ -1,10 +1,14 @@
 import React, { useContext } from "react";
 import AppContext from "../AppContext";
 
-function Image() {
+const Image: React.FC = () => {
 
   const { images, selected, deselect } = useContext(AppContext);
 
+  if (selected === null) {
+    return null;
+  }
+  console.log('IMAGES', images)
   const { original, _id, color } = images[selected]
 
   const bgStyle = {

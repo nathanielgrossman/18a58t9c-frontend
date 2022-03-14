@@ -138,6 +138,8 @@ button {
 .scatter-box {
   height: 300px;
   width: 300px;
+  pointer-events: none;
+  position: absolute;
 }
 
 .scatter-thumb-button {

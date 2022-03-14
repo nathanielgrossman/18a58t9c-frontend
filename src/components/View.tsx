@@ -7,7 +7,7 @@ import Loader from "./Loader";
 import TopBar from "./TopBar";
 
 
-function View() {
+const View = () => {
 
     const { loading, selected, chronological } = useContext(AppContext);
 
