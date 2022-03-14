@@ -1,13 +1,13 @@
 {
   "name": "18a58t9c-frontend",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "exit 0",
     "build": "parcel build index.html",
     "start": "parcel index.html",
-    "tsc": "npx tsc --noEmit"
+    "tsc": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -20,17 +20,19 @@
   },
   "homepage": "https://github.com/nathanielgrossman/18a58t9c-frontend#readme",
   "dependencies": {
-    "@types/react": "^17.0.40",
-    "@types/react-dom": "^17.0.13",
-    "axios": "^0.26.1",
-    "react": "16.7.0-alpha.2",
-    "react-dom": "16.7.0-alpha.2"
+    "@types/react": "17.0.40",
+    "@types/react-dom": "17.0.13",
+    "axios": "0.26.1",
+    "core-js": "3.21.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "cssnano": "^4.1.8",
-    "parcel-bundler": "^1.11.0",
-    "source-map-loader": "^3.0.1",
-    "ts-loader": "^9.2.8",
-    "typescript": "^4.6.2"
+    "cssnano": "4.1.8",
+    "parcel": "2.0.0",
+    "process": "^0.11.10",
+    "source-map-loader": "3.0.1",
+    "ts-loader": "9.2.8",
+    "typescript": "4.6.2"
   }
 }
