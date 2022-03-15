@@ -1,25 +1,22 @@
 import React, { useEffect, useContext } from "react";
 import AppContext from "../AppContext";
 import Thumbnail from "./Thumbnail";
-import { random } from "../utils";
+import { random } from "../utils/utils";
+import {
+  IMAGE_COUNT_BY_WIDTH,
+  IS_NONSTANDARD_WIDTH,
+  WINDOW_OFFSET,
+} from "../utils/constants";
 
 const Scatter = () => {
-  const { images, totalImages } =
-    useContext(AppContext);
+  const { images, totalImages } = useContext(AppContext);
 
   const thumbnails = images
-    .slice(
-      0,
-      window.innerWidth < 850 || window.innerWidth > 2000
-        ? images.length
-        : Math.floor(window.innerWidth / 90)
-    )
+    .slice(0, IS_NONSTANDARD_WIDTH ? images.length : IMAGE_COUNT_BY_WIDTH)
     .map((image, index) => {
-      let offset = window.innerWidth < 850 ? 110 : 330;
-
       const style = {
-        top: random(50, window.innerHeight - offset),
-        left: random(0, window.innerWidth - offset),
+        top: random(50, window.innerHeight - WINDOW_OFFSET),
+        left: random(0, window.innerWidth - WINDOW_OFFSET),
         zIndex: random(0, totalImages),
       };
 

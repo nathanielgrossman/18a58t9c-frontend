@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { random, invert, coinToss } from "../utils";
-import colors from "../colors";
+import { random, invert, coinToss } from "../utils/utils";
+import { COLORS } from "../utils/constants";
 
 type ColorTextProps = {
   text: string,
@@ -16,7 +16,7 @@ export const ColorText: React.FC<ColorTextProps> = ({ text, int }) => {
     const step = () => {
       if (counter > int && element.current) {
         counter = 0
-        let bg = colors[random(0, colors.length - 1)]
+        let bg = COLORS[random(0, COLORS.length - 1)]
         element.current.style.color = invert(bg, coinToss())
         element.current.style.textShadow = `${random(-5,2)}px ${random(-2,5)}px ${random(0,7)}px ${bg}`
       }

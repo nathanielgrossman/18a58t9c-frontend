@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import AppContext from "../AppContext";
+import { getThumbURL } from "../utils/urlUtils";
 
 type ThumbnailProps = {
   id: string;
@@ -20,7 +21,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({ id, index, title, color, type }) 
       <img 
         className={type}
         alt={title} 
-        src={`https://s3-us-west-1.amazonaws.com/18a58t9c/thumbs/${id}.jpg`}
+        src={getThumbURL(id)}
       />
     </button>
   )

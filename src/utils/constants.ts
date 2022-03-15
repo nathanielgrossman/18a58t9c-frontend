@@ -1,4 +1,4 @@
-const colors = [
+export const COLORS = [
   'rgb(101, 87, 69)',
   'rgb(128, 99, 45)',
   'rgb(53, 52, 35)',
@@ -101,4 +101,13 @@ const colors = [
   'rgb(56, 48, 41)'
 ] as const;
 
-export default colors
+export const GROUP_SIZE = 20;
+
+export const IS_SMALL_WIDTH = window.innerWidth < 850;
+export const IS_XL_WIDTH = window.innerWidth > 2000;
+export const IS_NONSTANDARD_WIDTH = IS_SMALL_WIDTH || IS_XL_WIDTH;
+export const IS_STANDARD_WIDTH = !IS_NONSTANDARD_WIDTH;
+
+export const WINDOW_OFFSET = IS_SMALL_WIDTH ? 110 : 330;
+
+export const IMAGE_COUNT_BY_WIDTH = Math.floor(window.innerWidth / 90);

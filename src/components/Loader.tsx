@@ -1,6 +1,6 @@
 import React from "react";
 import ColorText from "./ColorText"
-import { random } from "../utils";
+import { random } from "../utils/utils";
 
 type LoaderProps = {
   text: string;

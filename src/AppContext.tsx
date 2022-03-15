@@ -7,7 +7,6 @@ export type AppContextValues = {
   images: Array<Image>;
   selected: number | null;
   totalImages: number;
-  groupSize: number;
   group: number;
   loadImages: (data: any) => void;
   nextGroup: () => void;
@@ -23,7 +22,6 @@ const AppContext = React.createContext<AppContextValues>({
   images: [],
   selected: null,
   totalImages: 0,
-  groupSize: 20,
   group: 1,
   loadImages: () => {},
   nextGroup: () => {},
