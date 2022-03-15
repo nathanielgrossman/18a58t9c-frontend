@@ -2,12 +2,12 @@ import React, { SyntheticEvent, useContext } from "react";
 import AppContext from "../AppContext";
 
 const ModeButton: React.FC = () => {
-  const { chronological, toggleEndpoint } = useContext(AppContext);
+  const { chronological, toggleMode } = useContext(AppContext);
 
   const title = chronological ? "Algorithmic View" : "chronological View";
   const toggle = (e: SyntheticEvent) => {
     e.preventDefault();
-    toggleEndpoint();
+    toggleMode();
   };
 
   return (

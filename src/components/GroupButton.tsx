@@ -3,11 +3,11 @@ import AppContext from "../AppContext";
 
 const GroupButton = () => {
 
-  const { nextGroup } = useContext(AppContext);
+  const { loadNextGroup } = useContext(AppContext);
 
 
   return (
-    <button className="group-button" onClick={nextGroup} >
+    <button className="group-button" onClick={loadNextGroup} >
       <span>{'>'}</span>
     </button>
   )
