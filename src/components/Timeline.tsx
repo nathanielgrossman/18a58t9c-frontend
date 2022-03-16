@@ -20,7 +20,7 @@ const Timeline: React.FC = () => {
           />
         );
       }),
-    []
+    [images, totalImages]
   );
 
   return (
