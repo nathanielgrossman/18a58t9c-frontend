@@ -11,12 +11,7 @@ const ModeButton: React.FC = () => {
   };
 
   return (
-    <button
-      className="left"
-      type="button"
-      title={title}
-      onClick={toggle}
-    >
+    <button className="left" type="button" title={title} onClick={toggle}>
       {chronological ? (
         <span className="icon">&#9860;</span>
       ) : (
@@ -24,6 +19,6 @@ const ModeButton: React.FC = () => {
       )}
     </button>
   );
-}
+};
 
 export default ModeButton;

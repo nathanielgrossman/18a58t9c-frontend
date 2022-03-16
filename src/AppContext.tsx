@@ -1,4 +1,11 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
+
+import { trackImageView, useImages } from "./utils/api";
+
+
+type AppContextProviderProps = {
+  children: React.ReactNode;
+};
 
 export type AppContextValues = {
   loading: boolean;
@@ -21,8 +28,41 @@ const AppContext = React.createContext<AppContextValues>({
   loadNextGroup: () => {},
   select: () => {},
   deselect: () => {},
-  toggleMode: () => {}
+  toggleMode: () => {},
 });
 
+export const AppContextProvider: React.FC<AppContextProviderProps> = ({ children }) => {
+  const [chronological, setChronological] = useState(false);
+  const [selected, setSelected] = useState<number | null>(null);
 
-export default AppContext
+  const { images, totalImages, loading, loadNextGroup } = useImages(chronological);
+
+  const select = useCallback((index: number, id: string) => {
+    setSelected(index);
+    trackImageView(id)
+  }, []);
+
+  const deselect = useCallback(() => {
+    setSelected(null);
+  }, []);
+
+  const toggleMode = () => setChronological(!chronological);
+
+  const contextValues: AppContextValues = {
+    loading,
+    chronological,
+    images,
+    selected,
+    totalImages,
+    loadNextGroup,
+    select,
+    deselect,
+    toggleMode,
+  };
+
+  return (
+    <AppContext.Provider value={contextValues}>{children}</AppContext.Provider>
+  );
+};
+
+export default AppContext;

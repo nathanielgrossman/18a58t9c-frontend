@@ -8,9 +8,9 @@ const TopBar = () => {
   return (
     <div id="top-bar">
       <ModeButton />
-      <p id="title">{chronological ? 'archive' : '18a58t9c'}</p>
-    </div> 
-  )
-}
+      <p id="title">{chronological ? "archive" : "18a58t9c"}</p>
+    </div>
+  );
+};
 
 export default TopBar;

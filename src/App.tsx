@@ -1,17 +1,14 @@
-import React, { useEffect, useContext } from "react";
-import axios from "axios";
+import React from "react";
+import { AppContextProvider } from "./AppContext";
 
-import AppContext from "./AppContext";
 import View from "./components/View";
 
-
-function App() {
-  return (
-    <div id="app" className="loader">
+const App = () => (
+  <div id="app" className="loader">
+    <AppContextProvider>
       <View />
-    </div>
-  );
-}
-
+    </AppContextProvider>
+  </div>
+);
 
 export default App;

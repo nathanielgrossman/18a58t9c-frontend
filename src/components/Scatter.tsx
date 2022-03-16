@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import AppContext from "../AppContext";
 import Thumbnail from "./Thumbnail";
 import { random } from "../utils/utils";

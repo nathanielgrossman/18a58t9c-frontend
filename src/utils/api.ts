@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { getGroupURL, SCATTER_VIEW_URL } from "../utils/urlUtils";
+import { getGroupURL, SCATTER_VIEW_URL, UPDATE_VIEWS_URL } from "./urlUtils";
 import axios from "axios";
 
 export const useChronologicalImages = () => {
@@ -18,9 +18,13 @@ export const useChronologicalImages = () => {
       const isFirstLoad = currentGroup === undefined;
       const url = getGroupURL(nextGroup);
       setLoading(isFirstLoad);
-      const { data } = await axios.get<ImageQueryResult>(url);
-      setImages(isFirstLoad ? data.images : [...images, ...data.images]);
-      setTotalImages(data.total);
+      try {
+        const { data } = await axios.get<ImageQueryResult>(url);
+        setImages(isFirstLoad ? data.images : [...images, ...data.images]);
+        setTotalImages(data.total);
+      } catch (error) {
+        // do nothing
+      }
 
       setLoading(false);
     };
@@ -50,9 +54,13 @@ export const useScatterImages = () => {
       setShouldLoad(false);
       setLoading(true);
 
-      const { data } = await axios.get<ImageQueryResult>(SCATTER_VIEW_URL);
-      setImages(data.images);
-      setTotalImages(data.total);
+      try {
+        const { data } = await axios.get<ImageQueryResult>(SCATTER_VIEW_URL);
+        setImages(data.images);
+        setTotalImages(data.total);
+      } catch (error) {
+        // do nothing
+      }
 
       setLoading(false);
     };
@@ -84,4 +92,12 @@ export const useImages = (chronological: boolean) => {
   }, [chronological]);
 
   return { images, totalImages, loading, loadNextGroup };
+};
+
+export const trackImageView = (id: string) => {
+  try {
+    axios.post(UPDATE_VIEWS_URL, { id: id });
+  } catch (error) {
+    // do nothing
+  }
 };
