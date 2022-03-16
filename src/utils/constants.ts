@@ -1,3 +1,5 @@
+// A pool of 100 colors generated from photos on the site.
+// Used in a randomized fashion by the loader component.
 export const COLORS = [
   "rgb(101, 87, 69)",
   "rgb(128, 99, 45)",

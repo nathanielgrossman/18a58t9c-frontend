@@ -6,7 +6,7 @@ import Scatter from "./Scatter";
 import Loader from "./Loader";
 import TopBar from "./TopBar";
 
-const View = () => {
+const View: React.FC = () => {
   const { loading, selected, chronological } = useContext(AppContext);
 
   if (loading) {

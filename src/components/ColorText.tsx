@@ -3,9 +3,12 @@ import { random, invert, coinToss } from "../utils/utils";
 import { COLORS } from "../utils/constants";
 
 type ColorTextProps = {
-  text: string,
-  int: number,
-}
+  text: string;
+  /**
+   * An integer used for determining the rate of the animation
+   */
+  int: number;
+};
 
 export const ColorText: React.FC<ColorTextProps> = ({ text, int }) => {
   const element = useRef<HTMLSpanElement>(null);
@@ -24,12 +27,12 @@ export const ColorText: React.FC<ColorTextProps> = ({ text, int }) => {
       window.requestAnimationFrame(step);
     }
 
-    let animation = window.requestAnimationFrame(step);
+    const animation = window.requestAnimationFrame(step);
 
     return () => {
       window.cancelAnimationFrame(animation)
     }
-  }, [])
+  }, [text, int])
 
   return (
     <span ref={element} className="color-text">

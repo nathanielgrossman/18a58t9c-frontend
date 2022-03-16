@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import AppContext from "../AppContext";
 
-const GroupButton = () => {
+const GroupButton: React.FC = () => {
   const { loadNextGroup } = useContext(AppContext);
 
   return (

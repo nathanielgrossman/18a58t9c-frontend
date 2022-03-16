@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import AppContext from "../AppContext";
 import ModeButton from "./ModeButton";
 
-const TopBar = () => {
+const TopBar: React.FC = () => {
   const { chronological } = useContext(AppContext);
 
   return (

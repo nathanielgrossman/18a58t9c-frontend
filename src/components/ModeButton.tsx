@@ -4,7 +4,7 @@ import AppContext from "../AppContext";
 const ModeButton: React.FC = () => {
   const { chronological, toggleMode } = useContext(AppContext);
 
-  const title = chronological ? "Algorithmic View" : "chronological View";
+  const title = chronological ? "Algorithmic View" : "Chronological View";
   const toggle = (e: SyntheticEvent) => {
     e.preventDefault();
     toggleMode();

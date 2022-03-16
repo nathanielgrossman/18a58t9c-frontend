@@ -8,7 +8,7 @@ import {
   WINDOW_OFFSET,
 } from "../utils/constants";
 
-const Scatter = () => {
+const Scatter: React.FC = () => {
   const { images, totalImages } = useContext(AppContext);
 
   const thumbnails = images
