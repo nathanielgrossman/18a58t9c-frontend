@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled, { css } from "styled-components";
 
 import AppContext from "../AppContext";
-import Thumbnail from "./Thumbnail";
+import Thumbnail from "../components/Thumbnail";
 import { random } from "../utils/utils";
 import {
   IMAGE_COUNT_BY_WIDTH,
@@ -22,7 +22,7 @@ const ScatterBox = styled.div`
   }
 `;
 
-const ScatterView = styled.div`
+const Scatter = styled.div`
   height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
@@ -32,7 +32,7 @@ const ScatterView = styled.div`
   -webkit-overflow-scrolling: touch;
 `;
 
-const Scatter: React.FC = () => {
+const ScatterView: React.FC = () => {
   const { images, totalImages } = useContext(AppContext);
 
   const thumbnails = images
@@ -57,7 +57,7 @@ const Scatter: React.FC = () => {
       );
     });
 
-  return <ScatterView>{thumbnails}</ScatterView>;
+  return <Scatter>{thumbnails}</Scatter>;
 };
 
-export default Scatter;
+export default ScatterView;

@@ -1,12 +1,12 @@
 import React from "react";
 import { AppContextProvider } from "./AppContext";
 
-import View from "./components/MainView";
+import MainView from "./views/MainView";
 
 const App = () => (
   <div id="app" className="loader">
     <AppContextProvider>
-      <View />
+      <MainView />
     </AppContextProvider>
   </div>
 );

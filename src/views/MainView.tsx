@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import AppContext from "../AppContext";
-import Timeline from "./Timeline";
-import Image from "./Image";
-import Scatter from "./Scatter";
-import Loader from "./Loader";
-import TopBar from "./TopBar";
+import TimelineView from "./TimelineView";
+import Image from "../components/Image";
+import ScatterView from "./ScatterView";
+import Loader from "../components/Loader";
+import TopBar from "../components/TopBar";
 
 const View = styled.div`
   height: 100vh;
@@ -41,7 +41,7 @@ const MainView: React.FC = () => {
       <TopBar />
       <View>
         {selected !== null ? <Image /> : null}
-        {chronological ? <Timeline /> : <Scatter />}
+        {chronological ? <TimelineView /> : <ScatterView />}
       </View>
     </div>
   );

@@ -2,8 +2,8 @@ import React, { useContext, useMemo } from "react";
 import styled, { css } from "styled-components";
 
 import AppContext from "../AppContext";
-import Thumbnail from "./Thumbnail";
-import GroupButton from "./GroupButton";
+import Thumbnail from "../components/Thumbnail";
+import GroupButton from "../components/GroupButton";
 
 const Wrapper = styled.div`
   display: flex;
@@ -59,7 +59,7 @@ const Spacer = styled.div`
   }
 `;
 
-const Timeline: React.FC = () => {
+const TimelineView: React.FC = () => {
   const { images, totalImages } = useContext(AppContext);
 
   const thumbnails = useMemo(
@@ -90,4 +90,4 @@ const Timeline: React.FC = () => {
   );
 };
 
-export default Timeline;
+export default TimelineView;
