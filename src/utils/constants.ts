@@ -103,6 +103,17 @@ export const COLORS = [
   "rgb(56, 48, 41)",
 ] as const;
 
+// Used in a randomized fashion by the error state.
+export const ERROR_COLORS = [
+  "rgb(89, 65, 53)",
+  "rgb(143, 97, 8)",
+  "rgb(83, 58, 56)",
+  "rgb(84, 57, 60)",
+  "rgb(123, 91, 89)",
+  "rgb(75, 57, 41)",
+  "rgb(255, 0, 0)",
+] as const;
+
 export const GROUP_SIZE = 20;
 
 export const IS_SMALL_WIDTH = window.innerWidth < 850;

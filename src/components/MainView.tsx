@@ -16,7 +16,15 @@ const View = styled.div`
 `;
 
 const MainView: React.FC = () => {
-  const { loading, selected, chronological } = useContext(AppContext);
+  const { loading, selected, chronological, error } = useContext(AppContext);
+
+  if (error) {
+    return (
+      <View>
+        <Loader text={"an error has occured"} />
+      </View>
+    );
+  }
 
   if (loading) {
     return (

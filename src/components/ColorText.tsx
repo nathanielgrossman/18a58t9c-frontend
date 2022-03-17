@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 import { random, invert, coinToss } from "../utils/utils";
-import { COLORS } from "../utils/constants";
+import { COLORS, ERROR_COLORS } from "../utils/constants";
+import AppContext from "../AppContext";
 
 const Text = styled.span`
   letter-spacing: 4px;
@@ -20,35 +21,37 @@ type ColorTextProps = {
 };
 
 export const ColorText: React.FC<ColorTextProps> = ({ text, int }) => {
+  const { error } = useContext(AppContext);
   const element = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    const colors = error ? ERROR_COLORS : COLORS;
+    const limit = error ? int * 2 : int;
     let counter = 0;
 
     const step = () => {
-      // if counter has surpassed int, reset counter, choose a new color, and randomize a style
-      if (counter > int && element.current) {
-        counter = 0
-        const bg = COLORS[random(0, COLORS.length - 1)]
-        element.current.style.color = invert(bg, coinToss())
-        element.current.style.textShadow = `${random(-5,2)}px ${random(-2,5)}px ${random(0,7)}px ${bg}`
+      // if counter has surpassed limit, reset counter, choose a new color, and randomize a style
+      if (counter > limit && element.current) {
+        counter = 0;
+        const bg = colors[random(0, colors.length - 1)];
+        element.current.style.color = error ? bg : invert(bg, coinToss());
+        element.current.style.textShadow = `${random(-5, 2)}px ${random(
+          -2,
+          5
+        )}px ${random(0, 7)}px ${bg}`;
       }
       counter++;
       window.requestAnimationFrame(step);
-    }
+    };
 
     const animation = window.requestAnimationFrame(step);
 
     return () => {
-      window.cancelAnimationFrame(animation)
-    }
-  }, [text, int])
+      window.cancelAnimationFrame(animation);
+    };
+  }, [text, int]);
 
-  return (
-    <Text ref={element}>
-      {text}
-    </Text>
-  )
-}
+  return <Text ref={element}>{text}</Text>;
+};
 
-export default ColorText
+export default ColorText;

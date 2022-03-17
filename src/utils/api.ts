@@ -3,6 +3,7 @@ import { getGroupURL, SCATTER_VIEW_URL, UPDATE_VIEWS_URL } from "./urlUtils";
 import axios from "axios";
 
 export const useChronologicalImages = () => {
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState<Array<Image>>([]);
   const [totalImages, setTotalImages] = useState<number>(0);
@@ -23,8 +24,7 @@ export const useChronologicalImages = () => {
         setImages(isFirstLoad ? data.images : [...images, ...data.images]);
         setTotalImages(data.total);
       } catch (error) {
-        console.log('error', error )
-        // do nothing
+        setError(true);
       }
 
       setLoading(false);
@@ -38,10 +38,11 @@ export const useChronologicalImages = () => {
     [nextGroup]
   );
 
-  return { loading, images, totalImages, loadNextGroup };
+  return { loading, error, images, totalImages, loadNextGroup };
 };
 
 export const useScatterImages = () => {
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState<Array<Image>>([]);
   const [totalImages, setTotalImages] = useState<number>(0);
@@ -60,7 +61,7 @@ export const useScatterImages = () => {
         setImages(data.images);
         setTotalImages(data.total);
       } catch (error) {
-        // do nothing
+        setError(true);
       }
 
       setLoading(false);
@@ -71,14 +72,14 @@ export const useScatterImages = () => {
 
   const reloadImages = useCallback(() => setShouldLoad(true), []);
 
-  return { loading, images, totalImages, reloadImages };
+  return { loading, error, images, totalImages, reloadImages };
 };
 
 export const useImages = (chronological: boolean) => {
   const chronologicalImages = useChronologicalImages();
   const scatterImages = useScatterImages();
 
-  const { loading, images, totalImages } = useMemo(
+  const { loading, error, images, totalImages } = useMemo(
     () => (chronological ? chronologicalImages : scatterImages),
     [chronologicalImages, scatterImages, chronological]
   );
@@ -92,7 +93,7 @@ export const useImages = (chronological: boolean) => {
     }
   }, [chronological]);
 
-  return { images, totalImages, loading, loadNextGroup };
+  return { images, totalImages, loading, error, loadNextGroup };
 };
 
 export const trackImageView = (id: string) => {

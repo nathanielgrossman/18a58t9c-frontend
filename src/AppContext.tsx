@@ -9,6 +9,7 @@ type AppContextProviderProps = {
 
 export type AppContextValues = {
   loading: boolean;
+  error: boolean;
   chronological: boolean;
   images: Array<Image>;
   selected: number | null;
@@ -21,6 +22,7 @@ export type AppContextValues = {
 
 const AppContext = React.createContext<AppContextValues>({
   loading: true,
+  error: false,
   chronological: false,
   images: [],
   selected: null,
@@ -35,7 +37,7 @@ export const AppContextProvider: React.FC<AppContextProviderProps> = ({ children
   const [chronological, setChronological] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
 
-  const { images, totalImages, loading, loadNextGroup } = useImages(chronological);
+  const { images, totalImages, loading, error, loadNextGroup } = useImages(chronological);
 
   const select = useCallback((index: number, id: string) => {
     setSelected(index);
@@ -50,6 +52,7 @@ export const AppContextProvider: React.FC<AppContextProviderProps> = ({ children
 
   const contextValues: AppContextValues = {
     loading,
+    error,
     chronological,
     images,
     selected,
