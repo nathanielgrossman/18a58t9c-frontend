@@ -22,7 +22,7 @@ const MainView: React.FC = () => {
     return (
       <View>
         <Loader
-          text={chronological ? JSON.stringify(new Date()) : "loading..."}
+          text={JSON.stringify(new Date())}
         />
       </View>
     );
