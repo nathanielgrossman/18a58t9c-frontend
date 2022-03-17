@@ -23,6 +23,7 @@ export const useChronologicalImages = () => {
         setImages(isFirstLoad ? data.images : [...images, ...data.images]);
         setTotalImages(data.total);
       } catch (error) {
+        console.log('error', error )
         // do nothing
       }
 

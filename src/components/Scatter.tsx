@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import styled, { css } from "styled-components";
+
 import AppContext from "../AppContext";
 import Thumbnail from "./Thumbnail";
 import { random } from "../utils/utils";
@@ -7,6 +9,28 @@ import {
   IS_NONSTANDARD_WIDTH,
   WINDOW_OFFSET,
 } from "../utils/constants";
+
+
+const ScatterBox = styled.div`
+  height: 300px;
+  width: 300px;
+  pointer-events: none;
+  position: absolute;
+  @media screen and (max-device-width: 850px) {
+    height: 100px;
+    width: 100px;
+  }
+`;
+
+const ScatterView = styled.div`
+  height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  z-index: 0;
+  -webkit-overflow-scrolling: touch;
+`;
 
 const Scatter: React.FC = () => {
   const { images, totalImages } = useContext(AppContext);
@@ -21,20 +45,19 @@ const Scatter: React.FC = () => {
       };
 
       return (
-        <div key={image._id} className="scatter-box" style={style}>
+        <ScatterBox key={image._id} style={style}>
           <Thumbnail
             key={`thumb${index}`}
             id={image._id}
             index={index}
             title={image.original.substring(0, image.original.length - 4)}
-            color={image.color}
-            type={"scatter-thumb"}
+            thumbnailType={"scatter"}
           />
-        </div>
+        </ScatterBox>
       );
     });
 
-  return <div id="scatter">{thumbnails}</div>;
+  return <ScatterView>{thumbnails}</ScatterView>;
 };
 
 export default Scatter;

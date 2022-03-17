@@ -1,7 +1,7 @@
 import React from "react";
 import { AppContextProvider } from "./AppContext";
 
-import View from "./components/View";
+import View from "./components/MainView";
 
 const App = () => (
   <div id="app" className="loader">

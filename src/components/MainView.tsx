@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import styled from "styled-components";
+
 import AppContext from "../AppContext";
 import Timeline from "./Timeline";
 import Image from "./Image";
@@ -6,28 +8,35 @@ import Scatter from "./Scatter";
 import Loader from "./Loader";
 import TopBar from "./TopBar";
 
-const View: React.FC = () => {
+const View = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const MainView: React.FC = () => {
   const { loading, selected, chronological } = useContext(AppContext);
 
   if (loading) {
     return (
-      <div id="view">
+      <View>
         <Loader
           text={chronological ? JSON.stringify(new Date()) : "loading..."}
         />
-      </div>
+      </View>
     );
   }
 
   return (
     <div>
       <TopBar />
-      <div id="view">
+      <View>
         {selected !== null ? <Image /> : null}
         {chronological ? <Timeline /> : <Scatter />}
-      </div>
+      </View>
     </div>
   );
 };
 
-export default View;
+export default MainView;

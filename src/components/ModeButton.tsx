@@ -1,5 +1,21 @@
 import React, { SyntheticEvent, useContext } from "react";
+import styled from "styled-components";
+
 import AppContext from "../AppContext";
+
+const Button = styled.button`
+  flex: 1;
+`;
+
+const Icon = styled.span`
+  font-size: 2em;
+  &:hover {
+    color: #ddd;
+  }
+  &:active {
+    color: #aaa;
+  }
+`;
 
 const ModeButton: React.FC = () => {
   const { chronological, toggleMode } = useContext(AppContext);
@@ -11,13 +27,13 @@ const ModeButton: React.FC = () => {
   };
 
   return (
-    <button className="left" type="button" title={title} onClick={toggle}>
+    <Button type="button" title={title} onClick={toggle}>
       {chronological ? (
-        <span className="icon">&#9860;</span>
+        <Icon>&#9860;</Icon>
       ) : (
-        <span className="icon">&#9716;</span>
+        <Icon>&#9716;</Icon>
       )}
-    </button>
+    </Button>
   );
 };
 
