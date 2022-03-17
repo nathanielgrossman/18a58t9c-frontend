@@ -1,6 +1,9 @@
 {
   "name": "18a58t9c-frontend",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": [
+    "defaults",
+    "not ios_saf < 13"
+  ],
   "version": "1.0.0",
   "description": "",
   "scripts": {
