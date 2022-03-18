@@ -21,6 +21,10 @@ const pictureStyle = css`
   max-height: 100%;
   max-width: 100%;
   pointer-events: none !important;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 const Picture = styled.picture`
