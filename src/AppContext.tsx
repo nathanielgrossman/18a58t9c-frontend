@@ -20,7 +20,7 @@ export type AppContextValues = {
   toggleMode: () => void;
 };
 
-const AppContext = React.createContext<AppContextValues>({
+export const AppContext = React.createContext<AppContextValues>({
   loading: true,
   error: false,
   chronological: false,

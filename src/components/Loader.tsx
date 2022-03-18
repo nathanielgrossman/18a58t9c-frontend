@@ -1,12 +1,22 @@
 import React, { useMemo } from "react";
-import ColorText from "./ColorText";
+import ColorText, { ColorTextDebugProps } from "./ColorText";
 import { random } from "../utils/utils";
 
 type LoaderProps = {
   text: string;
+  globalRate?: number;
+  rateLow?: number;
+  rateHigh?: number;
+  colorTextDebugProps?: ColorTextDebugProps
 };
 
-const Loader: React.FC<LoaderProps> = ({ text }) => {
+const Loader: React.FC<LoaderProps> = ({
+  text,
+  globalRate,
+  colorTextDebugProps,
+  rateLow = 8,
+  rateHigh = 40,
+}) => {
   const chars = useMemo(
     () =>
       text.split("").map((char, index) => {
@@ -14,7 +24,8 @@ const Loader: React.FC<LoaderProps> = ({ text }) => {
           <ColorText
             key={`color-text-${index}`}
             text={char}
-            int={random(8, 40)}
+            int={globalRate || random(rateLow, rateHigh)}
+            debugProps={colorTextDebugProps}
           />
         );
       }),

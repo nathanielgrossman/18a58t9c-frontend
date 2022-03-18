@@ -11,3 +11,5 @@ type ImageQueryResult = {
   images: Array<Image>
   total: number;
 }
+
+type RGB = `rgb(${number}, ${number}, ${number})`;
