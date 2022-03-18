@@ -8,8 +8,8 @@
   "description": "",
   "scripts": {
     "test": "exit 0",
-    "build": "parcel build index.html",
-    "start": "parcel index.html",
+    "build": "parcel build index.html dev.html",
+    "start": "parcel index.html dev.html",
     "tsc": "tsc --noEmit",
     "prebuild": "yarn tsc && yarn test"
   },

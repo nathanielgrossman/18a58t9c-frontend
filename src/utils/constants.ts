@@ -114,6 +114,16 @@ export const ERROR_COLORS = [
   "rgb(255, 0, 0)",
 ] as const;
 
+// Used in a randomized fashion by the debug state.
+export const DEBUG_COLORS = [
+  "rgb(0, 255, 255)",
+  "rgb(255, 0, 255)",
+  "rgb(255, 255, 0)",
+  "rgb(0, 0, 255)",
+  "rgb(0, 255, 0)",
+  "rgb(255, 0, 0)",
+] as const;
+
 export const GROUP_SIZE = 20;
 
 export const IS_SMALL_WIDTH = window.innerWidth < 850;
