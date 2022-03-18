@@ -8,12 +8,13 @@ import AppContext from "../AppContext";
 type TextProps = {
   shadowTime?: number;
   colorTime?: number;
+  fontSize?: number;
 };
 
 const Text = styled.span<TextProps>`
   letter-spacing: 4px;
-  font-size: 1.25em;
-  ${({ shadowTime = 0.5, colorTime = 0.25 }) => css`
+  ${({ shadowTime = 0.5, colorTime = 0.25, fontSize = 1.25 }) => css`
+    font-size: ${fontSize}em;
     transition: text-shadow ${shadowTime}s, color ${colorTime}s;
     -webkit-transition: text-shadow ${shadowTime}s, color ${colorTime}s;
   `}
@@ -89,6 +90,7 @@ export const ColorText: React.FC<ColorTextProps> = ({
 
   return (
     <Text
+      fontSize={debugProps.fontSize}
       shadowTime={debugProps.shadowTime}
       colorTime={debugProps.colorTime}
       ref={element}

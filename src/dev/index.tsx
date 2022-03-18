@@ -37,6 +37,7 @@ const App = () => {
   const [greyBackground, setGreyBackground] = useState(false);
   const [error, setError] = useState(false);
   const [text, setText] = useState("Loading...");
+  const [fontSize, setFontSize] = useState<number>(1.25);
   const [globalRate, setGlobalRate] = useState<number | undefined>();
   const [rateLow, setRateLow] = useState<number>(8);
   const [rateHigh, setRateHigh] = useState<number>(40);
@@ -72,6 +73,7 @@ const App = () => {
     vHigh,
     blurLow,
     blurHigh,
+    fontSize,
   ]);
 
   return (
@@ -105,6 +107,14 @@ const App = () => {
               type="checkbox"
               checked={debugColor}
               onChange={toggleDebugColor}
+            />
+          </div>
+          <div>
+            <Title>font size</Title>
+            <input
+              type="number"
+              value={fontSize}
+              onChange={(e) => setFontSize(Number(e.target.value))}
             />
           </div>
           <div>
@@ -212,6 +222,7 @@ const App = () => {
               vHigh,
               blurLow,
               blurHigh,
+              fontSize,
             }}
           />
         )}
