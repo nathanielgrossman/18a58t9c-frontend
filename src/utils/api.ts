@@ -7,21 +7,19 @@ export const useChronologicalImages = () => {
   const [loading, setLoading] = useState(true);
   const [images, setImages] = useState<Array<Image>>([]);
   const [totalImages, setTotalImages] = useState<number>(0);
-  const [nextGroup, setNextGroup] = useState(0);
-  const [currentGroup, setCurrentGroup] = useState<number | undefined>();
+  const [group, setGroup] = useState<number>(0);
 
   useEffect(() => {
     const fetchImages = async () => {
-      if (currentGroup === nextGroup) {
-        return;
-      }
-      setCurrentGroup(nextGroup);
-      const isFirstLoad = currentGroup === undefined;
-      const url = getGroupURL(nextGroup);
+      const isFirstLoad = group === 0;
+      const url = getGroupURL(group);
       setLoading(isFirstLoad);
+
       try {
         const { data } = await axios.get<ImageQueryResult>(url);
-        setImages(isFirstLoad ? data.images : [...images, ...data.images]);
+        setImages((curent) =>
+          isFirstLoad ? data.images : [...curent, ...data.images]
+        );
         setTotalImages(data.total);
       } catch (error) {
         setError(true);
@@ -31,12 +29,9 @@ export const useChronologicalImages = () => {
     };
 
     fetchImages();
-  }, [currentGroup, nextGroup, images]);
+  }, [group]);
 
-  const loadNextGroup = useCallback(
-    () => setNextGroup(nextGroup + 1),
-    [nextGroup]
-  );
+  const loadNextGroup = useCallback(() => setGroup((g) => g + 1), []);
 
   return { loading, error, images, totalImages, loadNextGroup };
 };
